@@ -19,5 +19,5 @@ int main(void)
     if (found)
         printf("The given number is found at %d", i);
     else
-        printf("Element isnot Found in given Array !!");
+        printf("Please enter a valid number.");
 }

@@ -21,6 +21,9 @@ struct maxMin minmax(int arr[], int low, int high) {
         if(arr[low]<arr[high]) {
             result.min = arr[low];
             result.max = arr[high];
+        }else {
+            result.min = arr[high];
+            result.max = arr[low];
         }
         return result;
     }
@@ -30,8 +33,18 @@ struct maxMin minmax(int arr[], int low, int high) {
     left = minmax(arr, 0,mid);
     right = minmax(arr, mid+1, high);
 
-    result.min = (left.min < right.min) ? left.min: right.min;
-    result.max = (left.max > right.max) ? left.max:  right.max;
+
+    if(left.min < right.min) {
+        result.min = left.min;
+    }else {
+        result.min = right.min;
+    }
+
+    if(left.max > right.max) {
+        result.max = left.max;
+    }else {
+        result.max = right.max;
+    }
 
     return result;
 }
@@ -41,7 +54,7 @@ struct maxMin minmax(int arr[], int low, int high) {
 {
     int arr[] = {2,4,8,1,3,9,22,35};
      int size = sizeof(arr)/sizeof(arr[0]);
-    struct maxMin result = minmax(arr, 0, size-1);
+    struct maxMin result = minmax(arr, 0, 1);
     printf("Min value:%d\n", result.min);
     printf("Max value:%d", result.max);
 }
