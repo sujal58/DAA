@@ -54,7 +54,7 @@ struct maxMin minmax(int arr[], int low, int high) {
 {
     int arr[] = {2,4,8,1,3,9,22,35};
      int size = sizeof(arr)/sizeof(arr[0]);
-    struct maxMin result = minmax(arr, 0, 1);
+    struct maxMin result = minmax(arr, 0, size-1);
     printf("Min value:%d\n", result.min);
     printf("Max value:%d", result.max);
 }

@@ -60,6 +60,6 @@ int main()
     printf("Unsorted array is:\t");
     printSort(arr, n - 1);
     heapSort(arr, n - 1);
-    printf("\n\nSorted Heap tree is:\t");
+    printf("\n\nSorted Heap tree is:\t ");
     printSort(arr, n - 1);
 }
